@@ -4,9 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto HTML</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Proyecto Tienda con HTML</title>
 </head>
 <body>
-    <h1>Primer proyecto html</h1>
+    <header class="header">
+        <h1>Proyecto Tienda con HTML</h1>
+        <a href="./pagos.html" class="carrito">
+
+            <img class="carritoImg" src="./images/carrito.png" alt="">
+        </a>
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.php">Inicio</a></li>
+                <li><a href="productos.php">Productos</a></li>
+                <li><a href="contacto.php">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="productos">
+            <div class="item">
+                <h2>Producto1</h2>
+                <img class="imagen" src="./images/producto1.jpg" alt="">
+                <p>Descripcion del producto</p>
+            </div>
+            <div class="item">
+                <h2>Producto2</h2>
+                <img class="imagen" src="./images/producto2.jpg" alt="">
+                <p>Descripcion del producto</p>
+            </div>
+            <div class="item">
+                <h2>Producto3</h2>
+                <img class="imagen" src="./images/producto3.jpg" alt="">
+                <p>Descripcion del producto</p>
+            </div>
+            <div class="item">
+                <h2>Producto4</h2>
+                <img class="imagen" src="./images/producto4.jpg" alt="">
+                <p>Descripcion del producto</p>
+            </div>
+
+        </div>
+    </main>
 </body>
 </html>
