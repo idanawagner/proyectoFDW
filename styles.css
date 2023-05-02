@@ -1,4 +1,4 @@
-/* .header{
+.header{
     background-color: #ccaf97;
     color: #6a5a2b;
     padding: 10px;
@@ -9,6 +9,10 @@
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
+}
+.logo{
+    width: 10rem;
+    place-self: center;
 }
 .carrito{
     align-self: end;
@@ -43,4 +47,4 @@
 .imagen{
     width: 100%;
     height: 60%;
-} */
+}

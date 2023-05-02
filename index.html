@@ -5,18 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200">
     <title>Proyecto primera entrega</title>
 </head>
 <body>
     <header class="header">
-        <button>
             <a href="">Ingresar</a>
-        </button>
-        <button>
             <a href="">Registrarse</a>
-        </button>
-        <img src="./images/logo.jpg" alt="">
+        <img class="logo" src="./images/logo.png" alt="">
         <h1>Proyecto Tienda con HTML</h1>
         <input type="search" placeholder="Buscar">
         <a href="./pagos.html" class="carrito">
@@ -33,58 +29,56 @@
         </nav>
     </header>
     <main class="productos">
-        <div class="item">
-            <h1>Producto1</h1>
-            <img class="imagen" src="./images/producto1.jpg" alt="">
-            <p>Descripcion del producto</p>
-            <footer>Precio</footer>
-        </div>
-        <div class="item">
-            <h1>Producto2</h1>
-            <img class="imagen" src="./images/producto2.jpg" alt="">
-            <p>Descripcion del producto</p>
-            <footer>Precio</footer>
-        </div>
-        <div class="item">
-            <h1>Producto3</h1>
-            <img class="imagen" src="./images/producto3.jpg" alt="">
-            <p>Descripcion del producto</p>
-            <footer>Precio</footer>
-        </div>
+        <article class="item">
+                <!-- Se utilizo h2 en los titulos por correccion realizada por https://validator.w3.org/ "Consider using the h1 element as a top-level heading only" -->
+                <h2>Producto1</h2>
+                <img class="imagen" src="./images/producto1.jpg" alt="">
+                <p>Descripcion del producto</p>
+                <footer>Precio</footer>
+        </article>
+        <article class="item">
+                <h2>Producto2</h2>
+                <img class="imagen" src="./images/producto2.jpg" alt="">
+                <p>Descripcion del producto</p>
+                <footer>Precio</footer>
+        </article>
+        <article class="item">
+                <h2>Producto3</h2>
+                <img class="imagen" src="./images/producto3.jpg" alt="">
+                <p>Descripcion del producto</p>
+                <footer>Precio</footer>
+        </article>
     </main>
     <aside>
-        <h1>Recomendados</h1>
-        <div>
-            <h2>Producto1</h2>
-            <img src="./images/producto1.jpg" alt="">
-            <p>Descripcion del producto</p>
-            <footer>
-                <a href="">Ver mas</a>
-            </footer>
-        </div>
-        <div>
-            <h2>Producto2</h2>
-            <img src="./images/producto2.jpg" alt="">
-            <p>Descripcion del producto</p>
-            <footer>
-                <a href="">Ver mas</a>
-            </footer>
-        </div>
-        <div>
-            <h2>Producto3</h2>
-            <img src="./images/producto3.jpg" alt="">
-            <p>Descripcion del producto</p>
-            <footer>
-                <a href="">Ver mas</a>
-            </footer>
-        </div>
+        <table>
+            <tbody>
+                <tr>
+                    <td>Precio 1</td>
+                    <td>Descripcion del producto</td>
+                    <td><a href="">Ver mas</a></td>
+                    <td> <img src="./images/producto1.jpg" alt=""></td> 
+                </tr>
+                <tr>
+                    <td>Precio 2</td>
+                    <td>Descripcion del producto</td>
+                    <td><a href="">Ver mas</a></td>
+                    <td> <img src="./images/producto2.jpg" alt=""></td> 
+                </tr>
+                <tr>
+                    <td>Precio 3</td>
+                    <td>Descripcion del producto</td>
+                    <td><a href="">Ver mas</a></td>
+                    <td> <img src="./images/producto3.jpg" alt=""></td> 
+                </tr>
+            </tbody>
+        </table>
     </aside>
     <footer>
-        <span>
-            Autoras:
-            <p>López, Julieta Anahí</p>
+        <div>
+            DESARROLLADO POR GRUPO 28:
             <p>Wagner Cabrera, Idana</p>
-        </span>
+            <p>López, Julieta Anahí</p>
+        </div>
     </footer>
 </body>
 
