@@ -1,0 +1,62 @@
+/***********************************************
+
+ Autores: Integrante 1 - Integrante 2
+
+***********************************************/
+
+/* ORGANIZAR LAS DECLARACIONES EN BLOQUES*/
+
+/* ESTILOS GENERALES*/
+
+
+/* ESTILOS DE CABECERA PRINCIPAL*/
+.main-header{
+    background-color: blue;
+}
+.main-header img{
+    height: 100%;
+}
+/* ESTILOS DE BARRA DE NAVEGACIÓN */
+.main-menu{
+    background-color: red;   
+}
+main section{
+    padding: 3px;
+    background-color: green;
+}
+
+/* PLANTILLA DE PRODUCTOS */
+.card{
+    background-color: brown;
+}
+
+/* CONTROL DE STOCK */
+.stock-control{
+    display: flex;
+}
+.stock-alert{
+    width: 110px;
+    height: 60px;
+}
+
+/* COTIZACION DOLAR */
+.loading{
+    width: 100px;
+    display: flex;
+}
+.loading-item{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: lightblue;
+}
+.currency>p{
+    display: none;
+}
+
+/* FOOTER */
+.main-footer{
+    background-color: violet;
+}
+
+/* ESTILOS DE ...*/
