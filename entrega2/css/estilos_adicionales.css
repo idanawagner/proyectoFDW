@@ -1,6 +1,6 @@
 /***********************************************
 
- Autores: Integrante 1 - Integrante 2
+ Autores: Wagner Cabrera Idana - Lopez Julieta
 
 ***********************************************/
 
@@ -8,54 +8,251 @@
 
 /* ESTILOS GENERALES*/
 
-
-/* ESTILOS DE CABECERA PRINCIPAL*/
-.main-header{
-    background-color: blue;
+:root {
+    width: 1000px;
+    --colorTexto: #000000;
+    --colorHeader: #006D77;
+    --colorVerdeIntermedio: #42999B;
+    --colorBox: #83C5BE;
+    --colorFondo: #EDF6F9;
+    --colorBeige: ##FFDDD2;
+    --colorLadrillo: #E29578;
+    --colorNotification: #E63946;
 }
-.main-header img{
+
+body {
+    background-color: var(--colorFondo);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+                                            /* HEADER */
+.main-header {
+    order: 1;
+    width: 100%; /* ocupa el ancho total del body*/
+    background-color: var(--colorHeader);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1px 59px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.main-header img {
     height: 100%;
 }
-/* ESTILOS DE BARRA DE NAVEGACIÓN */
-.main-menu{
-    background-color: red;   
-}
-main section{
-    padding: 3px;
-    background-color: green;
+
+/* Notificaciones */
+
+.notification-icon {
+    font-size: 25px;
+    cursor: pointer;
 }
 
-/* PLANTILLA DE PRODUCTOS */
-.card{
-    background-color: brown;
+.notifications {
+    align-self: self-end;
+    width: 20px;
+}
+
+.notification-counter {
+    background-color: var(--colorNotification);
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--colorTexto);
+    font-size: 10px;
+    position: absolute;
+    z-index: 999;
+    top: 21px;
+    right: 569px;
+}
+
+/* Animacion notificaciones */
+@keyframes notification {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.notification-icon:hover {
+    animation: notification 0.1s infinite;
+    transition: 0.1s;
+}
+
+                                /* ESTILOS DE BARRA DE NAVEGACIÓN */
+.main-menu {
+    display: inline-block;
+    order: 2;
+    width: 25%;
+    background-color: var(--colorFondo);
+    overflow-y: hidden;
+    padding: 5px 5px 0px 40px;
+}
+
+.menu-group {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+.menu-group h2 {
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--colorHeader);
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.menu-group a {
+    display: flex;
+    text-decoration: none;
+    color: var(--colorTexto);
+    padding: 5px;
+    align-items: center;
+}
+
+.menu-group a:hover {
+    background-color: var(--colorBox);
+    border-radius: 20px;
+}
+
+.menu-text,
+.material-icons {
+    margin-left: 10px;
+}
+
+                                        /* ESTILOS MAIN */
+
+main {
+    order: 3;
+    width: 75%;
+    display: flex;
+    padding: 3px;
+    background-color: green;
+    margin-top: 20px;   
+    padding: 0px;
+   
+}
+
+
+/* ACTIVIDAD RECIENTE */
+.activity{
+    background-color: yellow;
+    order: 1;
+    width: 50%;
+
+}
+.activity>h2 {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--colorHeader);
+    padding: 5px;
+}
+.activity>table {
+    background-color: green;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    padding-left: 10px;
+
+}
+.activity>table>thead>tr>th{
+    flex-direction: row;
+    font-weight: 500;
+    padding-left: 10px;
+    font-size: 15px;
+}
+.activity>table>tbody>tr>td{
+    flex-direction: row;
+    padding-left: 10px;
+    font-size: 15px;
+}
+.activity>table>tbody>tr>td>button{
+    border-radius: 55%;
+    color: black;
+    background-color: transparent;
+    border: none;
+
+}
+
+/* TARJETAS */
+
+.cards{
+background-color: blue;
+order: 2;
+width: 50%;
+
+}
+.card {
+background-color: brown;
 }
 
 /* CONTROL DE STOCK */
-.stock-control{
-    display: flex;
+.stock-control {
+    order: 3;
+    width: 50%;
+    background-color: red;
 }
-.stock-alert{
+
+.stock-alert {
     width: 110px;
     height: 60px;
 }
 
 /* COTIZACION DOLAR */
-.loading{
+.currency{
+    background-color: orange;
+    order: 4;
+    width: 50%;
+    
+}
+.currency>p {
+    display: none;
+}
+.loading {
     width: 100px;
     display: flex;
 }
-.loading-item{
+
+/* OFERTAS EXCLUSIVAS */
+.exclusive-offers{
+background-color: var(--colorNotification);
+order: 5;
+width: 100%;
+}
+                /* ASISTENCIA */
+.contact-support{
+    background-color: purple;
+    order: 6; 
+    /* width: 20%; */
+}
+               
+.loading-item {
     width: 20px;
     height: 20px;
     border-radius: 50%;
     background-color: lightblue;
 }
-.currency>p{
-    display: none;
-}
+                                  
 
-/* FOOTER */
-.main-footer{
+                                            /* FOOTER */
+.main-footer {
+    order: 4;
+    width: 100%;
     background-color: violet;
 }
 
