@@ -1,6 +1,6 @@
 /***********************************************
 
- Autores: Wagner Cabrera Idana - Lopez Julieta
+ Autores: Wagner Cabrera Idana - López Julieta
 
 ***********************************************/
 
@@ -13,7 +13,7 @@
     --colorTexto: #000000;
     --colorHeader: #006D77;
     --colorVerdeIntermedio: #42999B;
-    --colorBox: #83C5BE;
+    --colorBox: #9ddad461;
     --colorFondo: #EDF6F9;
     --colorBeige: ##FFDDD2;
     --colorLadrillo: #E29578;
@@ -26,6 +26,16 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
 }
+.activity, .cards, .stock-control, .currency, .exclusive-offers{
+    width: 45%;
+    box-shadow: 0 0 10px var(--colorBox);
+    border-radius: 20px;
+    color: var(--colorHeader);
+    padding: 15px;
+    margin-right: 37px;
+
+}
+
 
                                             /* HEADER */
 .main-header {
@@ -66,10 +76,9 @@ body {
     align-items: center;
     color: var(--colorTexto);
     font-size: 10px;
-    position: absolute;
-    z-index: 999;
-    top: 21px;
-    right: 569px;
+    position: relative;
+    bottom: 31px;
+    left: 15px;
 }
 
 /* Animacion notificaciones */
@@ -149,9 +158,7 @@ main {
 
 /* ACTIVIDAD RECIENTE */
 .activity{
-    order: 1;
-    width: 50%;
-    
+    order: 1;    
 }
 .activity>h2 {
     font-size: 20px;
@@ -190,17 +197,13 @@ main {
 
 .cards{
     order: 2;
-    width: 50%;
-    color: var(--colorHeader);
+    height: auto;
 }
 .card {
-    display: block;
-    position: absolute;  
+    margin-left: 50px;
+    margin-top: 15px;
     border-radius: 10px;
-    width: 60%;
-    height: 50%;
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 10px;
     color: var(--colorFondo);
 }
 
@@ -238,10 +241,8 @@ main {
 /* CONTROL DE STOCK */
 .stock-control {
     order: 3;
-    width: 50%;
     margin-top: 20px;
     padding-right: 50px;
-    color: var(--colorHeader);
 }
 
 .stock-alert {
@@ -257,10 +258,10 @@ main {
 }
 
 .stock-control>article::after {
+    content: "Stock: " attr(data-stock);
     display: flex;
     width: 150px;
     padding-left: 10px;
-    content: "Stock: " attr(data-stock);
 }
 
 .stock-control>article[data-alert-level="high"]{
@@ -281,45 +282,197 @@ main {
 
 /* COTIZACION DOLAR */
 .currency{
-    background-color: orange;
     order: 4;
-    width: 50%;
+    margin-top: 20px;
+    padding-right: 50px;
+    display: flex;
+    flex-direction: column;
     
 }
 .currency>p {
     display: none;
 }
 .loading {
-    width: 100px;
-    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    margin-top: 100px;
 }
+.loading-item{
+    animation: loadingItem 1s infinite;
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: #fdd21d;
+    border: 1.5px double #ca7604;
+    color: #ca7604;
+}
+
+.loading-item:nth-of-type(1){
+    animation-delay: 0.1s;
+}
+.loading-item:nth-of-type(2){
+    animation-delay: 0.2s;
+}
+
+.loading-item:nth-of-type(3){
+    animation-delay: 0.3s;
+}
+.loading-item:nth-of-type(1)::before,
+.loading-item:nth-of-type(2)::before,
+.loading-item:nth-of-type(3)::before
+ {
+    content: "$";
+    display: block;
+    text-align: center;
+}
+
+@keyframes loadingItem{
+    0%{
+        transform: scale(1.1);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1.1);
+        ;
+    }
+} 
+
+
+
 
 /* OFERTAS EXCLUSIVAS */
 .exclusive-offers{
-background-color: var(--colorNotification);
-order: 5;
-width: 100%;
+    order: 5;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    height: 500px
+
+
 }
+.art-offer{
+    width: 30%;
+    background-color: var(--colorBox);
+    border-radius: 20px;
+    margin: 11px;
+    padding: 11px;
+    height: 370px;
+    color: var(--colorTexto);
+
+}
+
+.art-offer:hover{
+    transition: all 0.3s ease-out;
+    height: 400px;
+}
+
+.art-offer>img{
+    width: 100%;
+}
+.art-offer>header>h3{
+    font-size: 15px;
+    font-weight: 900;
+    height: 35px;
+    text-align: start;
+    margin: 10px;
+}
+
+
+.art-offer>header>p{
+    position: relative;
+    display: flex;
+    left: 94px;
+    height: 47px;
+    font-size: 20px;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+
+}
+
+.art-offer>header>p::after{
+    content: "$" attr(data-art-old-price);
+    color: var(--colorTexto);
+    opacity: 30%;
+    text-decoration: line-through;
+    display: none;
+    font-size: 15px;
+}
+
+.art-offer:hover p::after {
+    display: block;
+}
+
+.art-details{
+    display: none;
+    font-size: 12px;
+
+
+}
+.art-offer:hover .art-details{
+    display: block;
+}
+
+.art-offer>footer{
+    display: block;
+    margin: 5px;
+    
+}
+.art-offer>footer>p{
+    opacity: 50%;
+}
+
+.art-offer>footer>button{
+    width: 100%;
+    height: 28px;
+    border-radius: 20px;
+    background-color: var(--colorHeader);
+    color: var(--colorTexto);
+    font-size: 16px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
                 /* ASISTENCIA */
-.contact-support{
-    background-color: purple;
+.contact-text{
+    background-color: var(--colorLadrillo);
     order: 6; 
-    /* width: 20%; */
+    position: fixed;
+    bottom: 60px;
+    right: 525px;
+    font-size: 12px;
+    border-radius: 20px;
+    padding: 5px;
 }
-               
-.loading-item {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: lightblue;
+.contact-support>.material-icons-outlined{
+    font-size: 30px;
+    color: var(--colorTexto);
+    margin: 10px;
+    position: fixed;
+    bottom: 70px;
+    right: 514px;
+    font-size: 40px;
 }
-                                  
+
 
                                             /* FOOTER */
 .main-footer {
     order: 4;
     width: 100%;
-    background-color: violet;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--colorHeader);
 }
 
-/* ESTILOS DE ...*/
+.main-footer::before{
+    content: "Copyright © 2023 Wagner Cabrera Idana, López Julieta";
+}
+
