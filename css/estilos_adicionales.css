@@ -10,13 +10,11 @@
 
 :root {
     width: 1000px;
+    --colorFondo: #EDF6F9;
     --colorTexto: #000000;
     --colorHeader: #006D77;
-    --colorVerdeIntermedio: #42999B;
-    --colorBox: #9ddad461;
-    --colorFondo: #EDF6F9;
-    --colorBeige: ##FFDDD2;
-    --colorLadrillo: #E29578;
+    --colorBox: #9ddad469;
+    --colorAmarillo: #e2d778;
     --colorNotification: #E63946;
 }
 
@@ -26,6 +24,7 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
 }
+
 .activity, .cards, .stock-control, .currency, .exclusive-offers{
     width: 45%;
     box-shadow: 0 0 10px var(--colorBox);
@@ -36,8 +35,7 @@ body {
 
 }
 
-
-                                            /* HEADER */
+/* HEADER */
 .main-header {
     order: 1;
     width: 100%; /* ocupa el ancho total del body*/
@@ -85,14 +83,17 @@ body {
 @keyframes notification {
     0% {
         transform: rotate(0deg);
+        transform: scale(1.2);
     }
 
     50% {
         transform: rotate(10deg);
+        transform: scale(1.5);
     }
 
     100% {
         transform: rotate(0deg);
+        transform: scale(1.2);
     }
 }
 
@@ -101,7 +102,7 @@ body {
     transition: 0.1s;
 }
 
-                                /* ESTILOS DE BARRA DE NAVEGACIÓN */
+/* ESTILOS DE BARRA DE NAVEGACIÓN */
 .main-menu {
     display: inline-block;
     order: 2;
@@ -143,7 +144,7 @@ body {
     margin-left: 10px;
 }
 
-                                        /* ESTILOS MAIN */
+/* ESTILOS MAIN */
 
 main {
     order: 3;
@@ -154,7 +155,6 @@ main {
     padding: 0px;
    
 }
-
 
 /* ACTIVIDAD RECIENTE */
 .activity{
@@ -167,10 +167,7 @@ main {
     padding: 5px;
 }
 .activity>table {
-    border-radius: 16px;
     border-collapse: collapse;
-    box-shadow: 0 0 10px var(--colorBox);
-    border-radius: 10px;
     overflow: hidden;
     margin-left: 20px;
 }
@@ -178,15 +175,14 @@ main {
 .activity th,
 .activity td {
   padding: 10px;
-  border: 1px solid #83c5be40;
+  border: 1px solid var(--colorBox);
   text-align: start;
   border-radius: 10px;
 }
 
-
 .activity>table>tbody>tr>td>button{
     border-radius: 55%;
-    color: black;
+    color: var(--colorTexto);
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -224,19 +220,20 @@ main {
     
 }
 .card:nth-of-type(1){
-    background: linear-gradient(350deg, rgba(63,139,186,1) 0%, rgba(39,102,155,1) 100%);
+    background: radial-gradient(circle, var(--colorFondo) 7%, var(--colorHeader) 94%);}
+
+.card:nth-of-type(2){
+    background: radial-gradient(circle, var(--colorAmarillo) 0%, var(--colorNotification) 54%);
+    
 }
+.card:nth-of-type(3){
+        background: radial-gradient(circle, var(--colorHeader)0%, var(--colorTexto) 100%);
+}
+
 .card:nth-of-type(1):hover, .card:nth-of-type(2):hover, .card:nth-of-type(3):hover{
     transform: scale(1.1);
     z-index: 1;
 }
-.card:nth-of-type(2){
-    background: linear-gradient(180deg, #646464 0%, rgb(0 0 0) 100%);
-}
-.card:nth-of-type(3){
-    background: radial-gradient(circle, rgba(139,49,168,1) 0%, rgba(97,44,130,1) 100%);
-}
-
 
 /* CONTROL DE STOCK */
 .stock-control {
@@ -272,7 +269,7 @@ main {
 .stock-control>article[data-alert-level="medium"]{
     width: 50%;
     border-radius: 10px;
-    background-color: var(--colorLadrillo);
+    background-color: var(--colorAmarillo);
 }
 .stock-control>article[data-alert-level="low"]{
     width: 100%;
@@ -304,9 +301,9 @@ main {
     width: 20px;
     height: 20px;
     border-radius: 100%;
-    background-color: #fdd21d;
-    border: 1.5px double #ca7604;
-    color: #ca7604;
+    background-color: var(--colorAmarillo);
+    border: 1.5px double var(--colorNotification);
+    color: var(--colorNotification);
 }
 
 .loading-item:nth-of-type(1){
@@ -340,9 +337,6 @@ main {
         ;
     }
 } 
-
-
-
 
 /* OFERTAS EXCLUSIVAS */
 .exclusive-offers{
@@ -439,9 +433,9 @@ main {
     cursor: pointer;
 }
 
-                /* ASISTENCIA */
+/* ASISTENCIA */
 .contact-text{
-    background-color: var(--colorLadrillo);
+    background-color: var(--colorAmarillo);
     order: 6; 
     position: fixed;
     bottom: 60px;
@@ -461,7 +455,7 @@ main {
 }
 
 
-                                            /* FOOTER */
+/* FOOTER */
 .main-footer {
     order: 4;
     width: 100%;
@@ -473,6 +467,6 @@ main {
 }
 
 .main-footer::before{
-    content: "Copyright © 2023 Wagner Cabrera Idana, López Julieta";
+    content: "Copyright © 2023 López Julieta, Wagner Cabrera Idana.";
 }
 
